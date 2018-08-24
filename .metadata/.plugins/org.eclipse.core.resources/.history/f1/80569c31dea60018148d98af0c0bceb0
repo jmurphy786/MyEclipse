@@ -1,0 +1,101 @@
+import java.util.ArrayList;
+
+public class Calculator {
+	public static void main(String[] args) {
+		String[] operations = {"+", "-", "/", "*"};
+		int[] input = {1,2,3,4};
+		ArrayList<Integer> storecalcs = new ArrayList<Integer>(); 
+		int[] storage = new int[3];
+		
+		for (int i = 1; i < input.length; i++) {
+				storage[i-1] = input[i];
+		}
+		
+
+			getcalcs(storage, operations, input[0]);
+			System.out.println(storage);
+
+	}
+	
+	
+	
+	
+	public static void getcalcs(int[] arr, String[] op, int ref){
+		
+		ArrayList<Integer> storeadd = new ArrayList<Integer>();
+		ArrayList<Integer> storediv = new ArrayList<Integer>();
+		ArrayList<Integer> storemult = new ArrayList<Integer>();
+		ArrayList<Integer> storesub = new ArrayList<Integer>();
+		
+		for (int i=0; i < op.length; i++) {
+			for (int l=1; l < op.length; l++) {
+			for(int j=1; j< arr.length; j++) {
+				if (op[i] == "+")
+					storeadd.add(addt(ref, arr[i]));
+					for(int m =1; m < arr.length; m++) {
+						if (addt(ref, arr[i]) == arr[(arr.length)-j] || addt(ref, arr[i]) == arr[arr.length - -i])
+							System.out.println(ref + "+" + "" + arr[i] + "=" + arr[m]);
+					}
+				if (op[i] == "/")
+					storediv.add(div(arr[i], arr[i]));
+					for(int m =0; m < arr.length; m++) {
+						if (div(ref, arr[i]) == arr[arr.length-j] || (div(ref, arr[i]) == arr[arr.length - -i]))
+							System.out.println(ref + "/" + arr[i] + "=" + arr[m]);
+				}
+					for(int m =0; m < arr.length; m++) {
+						if (div2(ref, arr[i]) == arr[arr.length-j] || div2(ref, arr[i]) == arr[arr.length - -i])
+							System.out.println(arr[i] + "*"  + ref  + "=" + arr[m]);
+				}
+				if (op[i] == "-")
+					storemult.add(mult(arr[0], arr[i]));
+					for(int m =0; m < arr.length; m++) {
+						if (mult(ref, arr[i]) == arr[arr.length-j] || mult(ref, arr[i]) == arr[arr.length - -i])
+							System.out.println(ref + "*" + arr[i] + "=" + arr[m]);
+				}
+
+				if (op[i] == "*")
+					storesub.add(sub(arr[i], arr[j]));
+					for(int m =0; m < arr.length; m++) {
+						if (sub(ref, arr[i]) == arr[arr.length-j] || sub(ref, arr[i]) == arr[arr.length - -i])
+							System.out.println(ref +"-"  + arr[i] + "=" + arr[m]);
+				}
+					for(int m =0; m < arr.length; m++) {
+						if (sub2(ref, arr[i]) == arr[arr.length-j] || sub2(ref, arr[i]) == arr[arr.length - -i])
+							System.out.println(arr[i] +"-"  + ref + "=" + arr[m]);
+				}
+			}
+		}
+	}
+}
+
+	
+	
+	
+	public static int addt(int i , int j) {
+		int l = i + j;
+		return l;
+	}
+	
+	public static int mult(int i , int j) {
+		int l = i * j;
+		return l;
+	}
+	
+	public static int sub(int i , int j) {
+		int l = i - j;
+		return l;
+	}
+	public static int sub2(int i , int j) {
+		int l = j - i;
+		return l;
+	}
+	public static int div(int i , int j) {
+		int l = i/j;
+		return l;
+	}
+	
+	public static int div2(int i , int j) {
+		int l = j/i;
+		return l;
+	}
+}

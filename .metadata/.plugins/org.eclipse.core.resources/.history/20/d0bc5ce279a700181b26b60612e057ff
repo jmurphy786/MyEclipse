@@ -1,0 +1,14 @@
+import java.util.ArrayList;
+
+public class Destination {
+	ArrayList<SuperClass> storagechar = new ArrayList<SuperClass>();
+	ArrayList<SuperClass> storageitem = new ArrayList<SuperClass>();
+
+	
+	public void Arewethere(SuperClass character, SuperClass item) {
+		if (character.getEast()==item.getEast() && character.getNorth()==item.getNorth() && 
+		    character.getWest()==item.getWest() && character.getSouth()==item.getSouth()) {
+			System.out.println("You Made It");
+		}
+	}
+}

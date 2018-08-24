@@ -1,0 +1,31 @@
+
+public class SuperClass {
+
+	private double north;
+	private double south;
+	private double west;
+	private double east;
+	
+
+	public void setNorth(double north) {
+		this.north = north;
+	}
+	public void setEast(double east) {
+		this.east = east;
+	}
+	public void setWest(double west) {
+		this.west = west;
+	}
+	public void setSouth(double south) {
+		this.south = south;
+	}
+	
+	public double getNorth() {
+		return (this.north - this.south);
+	}
+	public double getEast() {
+		return this.east - this.west;
+	}
+}
+	
+

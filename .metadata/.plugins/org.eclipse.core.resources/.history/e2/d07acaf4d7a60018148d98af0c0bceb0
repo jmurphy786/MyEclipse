@@ -1,0 +1,89 @@
+import java.util.ArrayList;
+
+public class Calculator {
+	public static void main(String[] args) {
+		String[] operations = {"+", "-", "/", "*"};
+		int[] input = {1,2,3,4};
+		ArrayList<Integer> storecalcs = new ArrayList<Integer>(); 
+		int[] storage = new int[3];
+		
+		for (int i = 1; i < input.length; i++) {
+				storage[i-1] = input[i];
+		}
+		
+
+			getcalcs(storage, operations, input[0]);
+		
+
+	}
+	
+	
+	
+	
+	public static void getcalcs(int[] arr, String[] op, int ref){
+		
+		ArrayList<Integer> storeadd = new ArrayList<Integer>();
+		
+		int check;
+		
+		ArrayList<Integer> storediv = new ArrayList<Integer>();
+		ArrayList<Integer> storemult = new ArrayList<Integer>();
+		ArrayList<Integer> storesub = new ArrayList<Integer>();
+		
+		
+		
+		for (int i=0; i < op.length; i++) {
+			for (int l=1; l < op.length; l++) {
+			for(int j=1; j< arr.length; j++) {
+				if (op[i] == "+")
+					storeadd.add(addt(ref, arr[j]));
+					for(int m =0; m < arr.length; m++) {
+						if (addt(ref, arr[j]) == arr[m])
+							System.out.print(ref + "+" + "" + arr[j] + "=" + arr[m]);
+					}
+				if (op[i] == "/")
+					storediv.add(div(arr[0], arr[j]));
+					for(int m =0; m < arr.length; m++) {
+						if (div(ref, arr[j]) == arr[m])
+							System.out.print(ref + "/" + arr[j] + "=" + arr[m]);
+				}
+				if (op[i] == "-")
+					storemult.add(mult(arr[0], arr[j]));
+					for(int m =0; m < arr.length; m++) {
+						if (div(ref, arr[j]) == arr[m])
+							System.out.print(ref + arr[j]);
+				}
+				if (op[i] == "*")
+					storesub.add(sub(arr[0], arr[j]));
+					for(int m =0; m < arr.length; m++) {
+						if (div(ref, arr[j]) == arr[m])
+							System.out.print(ref + arr[j]);
+				}
+			}
+		}
+	}
+}
+
+	
+	
+	
+	public static int addt(int i , int j) {
+		int l = i + j;
+		return l;
+	}
+	
+	public static int mult(int i , int j) {
+		int l = i * j;
+		return l;
+	}
+	
+	public static int sub(int i , int j) {
+		int l = i - j;
+		return l;
+	}
+	
+	public static int div(int i , int j) {
+		int l = i / j;
+		return l;
+	}
+}

@@ -1,0 +1,40 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Terrain {
+	public static void main(String[] args) {
+		Random rand = new Random();
+		
+		Character newchar = new Character();
+		newchar.setEast(0);
+		newchar.setNorth(0);
+		newchar.setWest(0);
+		newchar.setSouth(0);
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("Welcome to a world with no end, try to best to collect all items!");
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("\nPlease enter a Character Name");
+		Scanner s = new Scanner(System.in);
+		String myname = s.nextLine();
+		newchar.setName(myname);
+		
+		// Create a new item
+		Item newitem = new Item();
+		newitem.setName("Axel Rod");
+		newitem.setEast(rand.nextInt(2));
+		newitem.setNorth(rand.nextInt(2));
+		newitem.setWest(rand.nextInt(2));
+		newitem.setSouth(rand.nextInt(2));
+	
+		Destination dest = new Destination();
+		Boolean check;
+		newchar.setChar();	
+		check = dest.Arewethere(newchar, newitem);
+		while(check == false) {
+		newchar.setChar();	
+		check = dest.Arewethere(newchar, newitem);
+		}
+	}
+}

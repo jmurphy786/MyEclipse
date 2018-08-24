@@ -1,0 +1,16 @@
+
+public class Boss {
+	
+	public void bossFight() {
+		System.out.println("\n\nOH NO, YOU UPSET THE SWAMP BROTHERS!!!!  \n\n");
+		System.out.println("                                             ");
+		System.out.println("          -----------------------------              -----------------------------      ");
+		System.out.println("         | (   |*|    )  (    |*|   )  |            | (   |*|    )  (    |*|   )  |  ");
+		System.out.println("          |         ( , ,)            |              |         ( , ,)            | ");
+		System.out.println("           |                         |                |                         |               ");
+		System.out.println("           |          ===          |                   |          ===          |       ");
+		System.out.println("             ----------------------                      ----------------------     ");
+		System.out.println("                     |   |                                       |   |  ");
+		
+	}
+}

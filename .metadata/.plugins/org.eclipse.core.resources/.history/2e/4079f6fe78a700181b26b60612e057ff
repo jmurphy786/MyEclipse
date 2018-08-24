@@ -1,0 +1,22 @@
+import java.util.Random;
+
+public class Terrain {
+	public static void main(String[] args) {
+		Random rand = new Random();
+		
+		Character newchar = new Character();
+		newchar.setEast(0);
+		newchar.setNorth(0);
+		newchar.setWest(0);
+		newchar.setSouth(0);
+		
+		// Create a new item
+		Item newitem = new Item();
+		newitem.setEast(rand.nextInt(20));
+		newitem.setNorth(rand.nextInt(20));
+		newitem.setWest(rand.nextInt(20));
+		newitem.setSouth(rand.nextInt(20));
+	
+		newchar.setChar();	
+	}
+}

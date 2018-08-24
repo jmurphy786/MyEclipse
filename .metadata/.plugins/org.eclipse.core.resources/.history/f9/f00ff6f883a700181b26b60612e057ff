@@ -1,0 +1,15 @@
+
+public class Boss {
+	
+	public void bossFight() {
+		System.out.println("                                             ");
+		System.out.println("          -----------------------------|          ");
+		System.out.println("         | (   |*|    )  (    |*|   )  |        ");
+		System.out.println("          |         ( , ,)            |             ");
+		System.out.println("           |                         |              ");
+		System.out.println("           |          ===          |             ");
+		System.out.println("             ----------------------             ");
+		System.out.println("                     |   |            ");
+		
+	}
+}

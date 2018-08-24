@@ -1,0 +1,37 @@
+
+public class Boss {
+	
+	public void bossFight() {
+		System.out.println("\n\nOH NO, YOU UPSET THE SWAMP BROTHERS!!!!  \n\n");
+		System.out.println("                                             ");
+		System.out.println("          -----------------------------              -----------------------------      ");
+		System.out.println("         | (   |*|    )  (    |*|   )  |            | (   |*|    )  (    |*|   )  |  ");
+		System.out.println("          |         ( , ,)            |              |         ( , ,)            | ");
+		System.out.println("           |                         |                |                         |               ");
+		System.out.println("           |          ===          |                   |          ===          |       ");
+		System.out.println("             ----------------------                      ----------------------     ");
+		System.out.println("                     |   |                                       |   |  ");
+		
+	}
+	
+	public void dodgetheattack(String decision) {
+		if (decision == "F") {
+			System.out.println("Congratulations you dodge the attack and get out with your items unscathed!");
+		}
+		else if (decision == "B") {
+			System.out.println("The power of the swamp brothers overcome you, you have perished in the World with no end");
+			endScene();
+		}
+		
+	}
+	
+	
+	public void endScene() {
+		System.out.println("\n\n====================================================");
+		System.out.println("====================================================");
+		System.out.println("==================== Y O U ========================");
+		System.out.println("=================== L O S E ========================");
+		System.out.println("====================================================");
+		System.out.println("====================================================");
+	}
+}

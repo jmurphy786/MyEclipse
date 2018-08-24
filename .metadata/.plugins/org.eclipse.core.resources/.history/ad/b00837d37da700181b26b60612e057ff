@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+
+public class Destination {
+	ArrayList<SuperClass> storagechar = new ArrayList<SuperClass>();
+	ArrayList<SuperClass> storageitem = new ArrayList<SuperClass>();
+
+	
+	
+	
+	public Boolean Arewethere(Character character, Item item) {
+		if ((character.getNorth() == item.getNorth()) && (character.getEast() == item.getEast())) {
+			System.out.println("Congratulations " + character.getName() + " You Made it t" + 
+		    "here is your " + item.getName());
+			return true;
+		}
+		System.out.println("Unfortunately you are too far, Here's a tip -- The item is " + 
+		item.getNorth() + " North and " + item.getEast() + " West" + item.getWest() + item.getSouth());
+				
+		return false;
+	}
+}

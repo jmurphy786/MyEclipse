@@ -1,0 +1,82 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Terrain {
+	public static void main(String[] args) {
+		Random rand = new Random();
+		level2 newlevel = new level2();
+		
+		Character newchar = new Character();
+		newchar.setEast(0);
+		newchar.setNorth(0);
+		newchar.setWest(0);
+		newchar.setSouth(0);
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("Welcome to a world with no end, try to best to collect all items!");
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("\nPlease enter a Character Name");
+		Scanner s = new Scanner(System.in);
+		String myname = s.nextLine();
+		newchar.setName(myname);
+		
+		// Create a new item
+		Item newitem = new Item();
+		newitem.setName("Axel Rod");
+		newitem.setEast(rand.nextInt(2));
+		newitem.setNorth(rand.nextInt(2));
+		newitem.setWest(rand.nextInt(2));
+		newitem.setSouth(rand.nextInt(2));
+	
+		Destination dest = new Destination();
+		Boolean check;
+		newchar.setChar();	
+		check = dest.Arewethere(newchar, newitem);
+		while(check == false) {
+		newchar.setChar();	
+		check = dest.Arewethere(newchar, newitem);
+		}
+		
+		Boss newBoss = new Boss();
+		newBoss.bossFight1();
+		
+		System.out.println("\n\nThey both run at you in unison, they are charging at you at high speeds"
+		+ " you can either move forwards or backwards to dodge the attack which do you do?"
+		+ "\n\n Press 1 for forwards or 0 for backwards");
+		int dodge = s.nextInt();
+		
+		if (newBoss.dodgetheattack(dodge) == true) {
+			newBoss.bossMan();
+			newBoss.guessitem(newchar.getNorth(), newchar.getSouth(), newchar.getWest(), newchar.getEast());
+			if(	newBoss.guessitem(newchar.getNorth(), newchar.getSouth(), newchar.getWest(), newchar.getEast()) == true) {
+			newlevel.notyet();
+			newchar.setEast(0);
+			newchar.setNorth(0);
+			newchar.setWest(0);
+			newchar.setSouth(0);
+			newitem.setName("The Grand Sceptre");
+			newitem.setEast(rand.nextInt(2));
+			newitem.setNorth(rand.nextInt(2));
+			newitem.setWest(rand.nextInt(2));
+			newitem.setSouth(rand.nextInt(2));
+			newchar.setChar();
+			check = newlevel.Arewethere(newchar, newitem);
+			while(check == false){
+				newchar.setChar();	
+				check = dest.Arewethere(newchar, newitem);
+			}
+			newBoss.boss2();
+			System.out.println("A mysterious being blocks you from the " + newitem.getName() + "it asks you for a password" +
+			"what you reply with may very well determine your fate, what do you choose?");
+			String pass = s.nextLine();
+			if (newlevel.guesspass(pass) == true)
+				System.out.println("Congrats");
+			else
+				newBoss.endScene();
+		}
+	}
+
+
+	}
+}
